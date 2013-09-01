@@ -1,6 +1,8 @@
-# Omniauth::Launchkey
+# OmniAuth LaunchKey
 
-TODO: Write a gem description
+LaunchKey OAuth 2.0 strategy for [OmniAuth](https://github.com/intridea/omniauth)
+1.0. Read the [LaunchKey OAuth docs](https://launchkey.com/docs/oauth/getting-started)
+for details.
 
 ## Installation
 
@@ -18,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Read the [OmniAuth docs](https://github.com/intridea/omniauth) for detailed
+instructions. See `example/` for an example of LaunchKey's OAuth flow
+using Sinatra.
+
+### Rails Example
+
+The OmniAuth strategy can be configured in an initializer
+(e.g. `config/initializers/omniauth.rb`):
+
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :launchkey, ENV['LAUNCHKEY_CLIENT_ID'], ENV['LAUNCHKEY_CLIENT_SECRET']
+end
+```
 
 ## Contributing
 
